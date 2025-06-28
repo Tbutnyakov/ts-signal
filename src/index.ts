@@ -1,1 +1,3 @@
-console.log("hello world");
+import { signal } from "./signal";
+
+export { signal };
