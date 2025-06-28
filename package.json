@@ -1,0 +1,27 @@
+{
+  "name": "ts-signal",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "type": "module",
+  "scripts": {
+    "start": "tsx ./src/index.ts",
+    "dev": "tsx watch ./src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tbutnyakov/ts-signal.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tbutnyakov/ts-signal/issues"
+  },
+  "homepage": "https://github.com/Tbutnyakov/ts-signal#readme",
+  "description": "",
+  "devDependencies": {
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3"
+  }
+}
