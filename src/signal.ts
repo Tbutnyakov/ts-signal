@@ -9,17 +9,15 @@ export function getCurrentSubscriber() {
   return currentSubscriber;
 }
 
-export function signal<V extends unknown>(initialValue: V) {
+export function signal<V extends unknown>(initialValue?: V) {
   let subscriptions = new Set<SignalSubscriber>();
   let _value = initialValue;
 
   return {
     get value() {
-      if (currentSubscriber) {
-        subscriptions.add(currentSubscriber);
-      }
+      if (currentSubscriber) subscriptions.add(currentSubscriber);
 
-      return _value;
+      return _value as V;
     },
     set value(newValue) {
       _value = newValue;
