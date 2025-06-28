@@ -20,14 +20,19 @@ test("call passed callback if effect is called and effect contains signal", () =
   const spyFn = vi.fn();
 
   effect(() => {
-    console.log(targetSignal.value * 10);
-    spyFn();
+    const temp = targetSignal.value * 10;
+
+    spyFn(temp);
   });
 
+  expect(spyFn).toBeCalledWith(0);
+
   targetSignal.value += 1;
+  expect(spyFn).toBeCalledWith(10);
   targetSignal.value += 1;
 
   expect(spyFn).toBeCalledTimes(3);
+  expect(spyFn).toBeCalledWith(20);
 });
 
 test("calls passed callback only once since no signal used", () => {
